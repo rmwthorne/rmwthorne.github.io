@@ -84,14 +84,14 @@ class AboutMe extends React.Component {
         <Layout theme="white" openContactPopup={this.openContactPopup}>
           <AboveFold>
             <t.H1 green align="center">
-              Name Surname - Lorem ipsum
+              Ross Thorne, PhD
             </t.H1>
             <t.LargeP align="center" max70>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-              ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-              fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-              mollit anim id est laborum.
+              Computational Biologist with a demonstrated history of working in the biotechnology industry. Skilled in
+              bioinformatics, data analysis, and data visualisation. Proven to be a flexible and fast learner, and
+              highly capable to work well within a team. Strong sense of visual design for data presentation and clarity
+              of written communication. Experienced research scientist with a Doctor of Philosophy (PhD), focused in
+              Clinical Laboratory Science from University of Oxford.
             </t.LargeP>
           </AboveFold>
           <Content>

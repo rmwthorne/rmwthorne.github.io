@@ -244,7 +244,7 @@ class Header extends React.Component {
                 </g>
               </svg>
             </Burger>
-            <MenuList {...showMobile && { showMobile }}>
+            <MenuList {...(showMobile && { showMobile })}>
               <Burger onClick={this.handleClose}>
                 <img alt="Close menu" src={Close} />
               </Burger>
