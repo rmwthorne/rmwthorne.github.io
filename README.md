@@ -2,6 +2,8 @@
   Portfolio Website
 </h1>
 
+![Gatsby Publish](https://github.com/rmwthorne/rmwthorne.github.io/workflows/Gatsby%20Publish/badge.svg?branch=dev)
+
 Portfolio website, built on [LekovicMilos/gatsby-starter-portfolio](https://www.gatsbyjs.org/starters/LekovicMilos/gatsby-starter-portfolio/) with many thanks.
 
 ## Setup
@@ -13,21 +15,11 @@ Portfolio website, built on [LekovicMilos/gatsby-starter-portfolio](https://www.
     npm install
     ```
 
-2.  **Build**
+2.  **Development**
 
-    Navigate into your your portfolio's directory and start it up.
+    Navigate into the repo directory and run `gatsby develop`.
+    This will run a devlopment server at `http://localhost:8000`.
 
-    ```sh
-    gatsby develop
-    ```
+3.  **Deployment**
 
-    Your site is now running at `http://localhost:8000`!
-
-3.  **Deploy**
-
-    After applying your changes, run this command to deploy it.
-
-    ```sh
-    gatsby build
-    gatsby serve
-    ```
+    Deployment is handled by the github actions in `.github/workflows/main.yml`
