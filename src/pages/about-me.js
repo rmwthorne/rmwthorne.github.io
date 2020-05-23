@@ -1,12 +1,12 @@
-import React from 'react';
-import styled from 'styled-components';
-import * as Mixins from '../Mixins';
-import * as t from '../Typography';
-import Layout, { Content } from '../components/Layout';
-import HireMePopup from '../components/HireMePopup.js';
-import { media } from '../MediaQueries';
-import Img from 'gatsby-image';
-import { graphql } from 'gatsby';
+import React from "react";
+import styled from "styled-components";
+import * as Mixins from "../Mixins";
+import * as t from "../Typography";
+import Layout, { Content } from "../components/Layout";
+import HireMePopup from "../components/HireMePopup.js";
+import { media } from "../MediaQueries";
+import Img from "gatsby-image";
+import { graphql } from "gatsby";
 
 const AboveFold = styled.div`
   ${Mixins.aboveFoldMixin}
@@ -87,18 +87,28 @@ class AboutMe extends React.Component {
               Ross Thorne, PhD
             </t.H1>
             <t.LargeP align="center" max70>
-              Computational Biologist with a demonstrated history of working in the biotechnology industry. Skilled in
-              bioinformatics, data analysis, and data visualisation. Proven to be a flexible and fast learner, and
-              highly capable to work well within a team. Strong sense of visual design for data presentation and clarity
-              of written communication. Experienced research scientist with a Doctor of Philosophy (PhD), focused in
-              Clinical Laboratory Science from University of Oxford.
+              Computational Biologist with a demonstrated history of working in
+              the biotechnology industry. Skilled in bioinformatics, data
+              analysis, and data visualisation. Proven to be a flexible and fast
+              learner, and highly capable to work well within a team. Strong
+              sense of visual design for data presentation and clarity of
+              written communication. Experienced research scientist with a
+              Doctor of Philosophy (PhD), focused in Clinical Laboratory Science
+              from University of Oxford.
             </t.LargeP>
           </AboveFold>
           <Content>
-            <Img fluid={data.avatarAbout.childImageSharp.fluid} alt="Name Surname" className="avatar" />
+            <Img
+              fluid={data.avatarAbout.childImageSharp.fluid}
+              alt="Name Surname"
+              className="avatar"
+            />
           </Content>
         </Layout>
-        <HireMePopup open={openHireMePopup} handleClose={this.handleRequestDemoClose} />
+        <HireMePopup
+          open={openHireMePopup}
+          handleClose={this.handleRequestDemoClose}
+        />
       </AboutMeWrapper>
     );
   }

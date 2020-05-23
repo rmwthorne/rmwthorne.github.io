@@ -10,7 +10,7 @@ Portfolio website, built on [LekovicMilos/gatsby-starter-portfolio](https://www.
 
     ```sh
     nvm use 10
-    npm install gatsby-cli
+    npm install
     ```
 
 2.  **Build**

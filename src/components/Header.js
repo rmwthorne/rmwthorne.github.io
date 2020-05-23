@@ -1,15 +1,15 @@
-import React from 'react';
-import { Button, HireMe } from './Button.js';
-import Close from '../images/close-popup.png';
-import styled from 'styled-components';
-import Colors from '../Colors';
-import * as Mixins from '../Mixins';
-import { media, mediaMin } from '../MediaQueries';
-import { withTheme } from 'styled-components';
-import * as t from '../Typography';
-import { lighten, darken } from 'polished';
-import Helmet from 'react-helmet';
-import Avatar from '../images/avatar.jpg';
+import React from "react";
+import { Button, HireMe } from "./Button.js";
+import Close from "../images/close-popup.png";
+import styled from "styled-components";
+import Colors from "../Colors";
+import * as Mixins from "../Mixins";
+import { media, mediaMin } from "../MediaQueries";
+import { withTheme } from "styled-components";
+import * as t from "../Typography";
+import { lighten, darken } from "polished";
+import Helmet from "react-helmet";
+import Avatar from "../images/avatar.jpg";
 
 const HeaderWrapper = styled.div`
   height: auto;
@@ -24,11 +24,13 @@ const HeaderWrapper = styled.div`
   right: 0;
   z-index: 999;
   color: ${Colors.white};
-  background: ${props => (props.scrolled ? `${Colors.white};` : 'transparent')};
-  animation: ${props => (props.scrolled ? 'fadein' : 'fadeout')} 0.5s;
-  ${props => props.scrolled && 'box-shadow: 0 2px 24px 0 rgba(0, 0, 0, 0.1);'}
+  background: ${props => (props.scrolled ? `${Colors.white};` : "transparent")};
+  animation: ${props => (props.scrolled ? "fadein" : "fadeout")} 0.5s;
+  ${props => props.scrolled && "box-shadow: 0 2px 24px 0 rgba(0, 0, 0, 0.1);"}
   ${t.P} {
-    color: ${props => (props.scrolled || props.theme === 'white') && `${Colors.darkest};`} ${media.desktop`
+    color: ${props =>
+        (props.scrolled || props.theme === "white") && `${Colors.darkest};`}
+      ${media.desktop`
         color: ${Colors.white};
       `};
   }
@@ -37,7 +39,8 @@ const HeaderWrapper = styled.div`
     border: 1px solid ${props => props.scrolled && `${Colors.darkest}`};
     &:hover {
       color: ${props => props.scrolled && `${lighten(0.3, Colors.darkest)}`};
-      border: 1px solid ${props => props.scrolled && `${lighten(0.3, Colors.darkest)}`};
+      border: 1px solid
+        ${props => props.scrolled && `${lighten(0.3, Colors.darkest)}`};
     }
     ${media.menuMax`
       padding: 15px 20px;
@@ -47,7 +50,8 @@ const HeaderWrapper = styled.div`
       border: 1px solid ${Colors.white};
       &:hover {
         color: ${props => props.scrolled && `${darken(0.3, Colors.white)}`};
-        border: 1px solid ${props => props.scrolled && `${darken(0.3, Colors.white)}`};
+        border: 1px solid ${props =>
+          props.scrolled && `${darken(0.3, Colors.white)}`};
       }
     `}
   }
@@ -91,9 +95,15 @@ const Burger = styled.div`
   top: 25px;
   color: ${Colors.white};
   z-index: 2;
-  color: ${props => (props.scrolled || props.theme === 'white' ? `${Colors.darkest}` : `${Colors.white}`)};
+  color: ${props =>
+    props.scrolled || props.theme === "white"
+      ? `${Colors.darkest}`
+      : `${Colors.white}`};
   &:hover {
-    ${props => (props.scrolled || props.theme === 'white' ? lighten(0.3, Colors.darkest) : darken(0.1, Colors.white))};
+    ${props =>
+      props.scrolled || props.theme === "white"
+        ? lighten(0.3, Colors.darkest)
+        : darken(0.1, Colors.white)};
     cursor: pointer;
     opacity: 0.9;
   }
@@ -173,7 +183,7 @@ class Header extends React.Component {
 
   componentDidMount() {
     this.handleScroll();
-    window.addEventListener('scroll', this.handleScroll);
+    window.addEventListener("scroll", this.handleScroll);
     const { theme } = this.props;
     this.setState({
       theme
@@ -190,7 +200,8 @@ class Header extends React.Component {
 
   handleScroll = () => {
     let doc = document.documentElement;
-    let scrollTop = (window.pageYOffset || doc.scrollTop) - (doc.clientTop || 0);
+    let scrollTop =
+      (window.pageYOffset || doc.scrollTop) - (doc.clientTop || 0);
     if (scrollTop >= 100) {
       this.setState({ scrolled: true });
     } else if (scrollTop < 100) {
@@ -204,7 +215,7 @@ class Header extends React.Component {
 
   render() {
     const { showMobile, scrolled, theme } = this.state;
-    const overflow = showMobile ? 'hidden' : 'auto';
+    const overflow = showMobile ? "hidden" : "auto";
     return (
       <HeaderWrapper theme={theme} scrolled={scrolled}>
         <Helmet>
@@ -215,7 +226,12 @@ class Header extends React.Component {
             <img src={Avatar} alt="Name Surname" />
           </Logo>
           <HeaderNav>
-            <Burger alt="Menu" onClick={this.handleBurgerClick} scrolled={scrolled} theme={theme}>
+            <Burger
+              alt="Menu"
+              onClick={this.handleBurgerClick}
+              scrolled={scrolled}
+              theme={theme}
+            >
               <svg
                 version="1.1"
                 id="Layer_1"
@@ -240,7 +256,11 @@ class Header extends React.Component {
                   C39,28.3,37.8,29.5,36.2,29.5z"
                 />
                 <g>
-                  <image width="80" height="62" transform="matrix(0.5 0 0 0.5 54 32.5)" />
+                  <image
+                    width="80"
+                    height="62"
+                    transform="matrix(0.5 0 0 0.5 54 32.5)"
+                  />
                 </g>
               </svg>
             </Burger>

@@ -1,12 +1,12 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import Helmet from 'react-helmet';
-import { StaticQuery, graphql } from 'gatsby';
-import styled from 'styled-components';
-import Header from './Header';
-import Footer from './Footer';
-import GlobalStyles from '../GlobalStyles';
-import * as Mixins from '../Mixins';
+import React from "react";
+import PropTypes from "prop-types";
+import Helmet from "react-helmet";
+import { StaticQuery, graphql } from "gatsby";
+import styled from "styled-components";
+import Header from "./Header";
+import Footer from "./Footer";
+import GlobalStyles from "../GlobalStyles";
+import * as Mixins from "../Mixins";
 
 export const Content = styled.div`
   ${Mixins.contentMixin}
@@ -16,7 +16,13 @@ export const LayoutWrapper = styled.div`
   position: relative;
 `;
 
-const Layout = ({ children, theme, bigFooter, mediumFooter, openContactPopup }) => (
+const Layout = ({
+  children,
+  theme,
+  bigFooter,
+  mediumFooter,
+  openContactPopup
+}) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -34,17 +40,21 @@ const Layout = ({ children, theme, bigFooter, mediumFooter, openContactPopup }) 
           title={data.site.siteMetadata.title}
           meta={[
             {
-              name: 'description',
-              content: 'Portfolio built using Gatsby and React'
+              name: "description",
+              content: "Portfolio built using Gatsby and React"
             },
-            { name: 'keywords', content: 'portfolio' }
+            { name: "keywords", content: "portfolio" }
           ]}
         >
           <html lang="en" />
         </Helmet>
         <Header theme={theme} openContactPopup={openContactPopup} />
         <LayoutWrapper>{children}</LayoutWrapper>
-        <Footer big={bigFooter} medium={mediumFooter} openContactPopup={openContactPopup} />
+        <Footer
+          big={bigFooter}
+          medium={mediumFooter}
+          openContactPopup={openContactPopup}
+        />
       </>
     )}
   />

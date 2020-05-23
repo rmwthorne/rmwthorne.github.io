@@ -1,16 +1,16 @@
-import React from 'react';
-import styled from 'styled-components';
-import * as Mixins from '../Mixins';
-import * as t from '../Typography';
-import Layout, { Content } from '../components/Layout';
-import Placeholder from '../images/placeholder.png';
-import { HireMe, LinkButton } from '../components/Button.js';
-import HireMePopup from '../components/HireMePopup.js';
-import { media } from '../MediaQueries';
-import Colors from '../Colors';
-import Img from 'gatsby-image';
-import { graphql } from 'gatsby';
-import { darken } from 'polished';
+import React from "react";
+import styled from "styled-components";
+import * as Mixins from "../Mixins";
+import * as t from "../Typography";
+import Layout, { Content } from "../components/Layout";
+import Placeholder from "../images/placeholder.png";
+import { HireMe, LinkButton } from "../components/Button.js";
+import HireMePopup from "../components/HireMePopup.js";
+import { media } from "../MediaQueries";
+import Colors from "../Colors";
+import Img from "gatsby-image";
+import { graphql } from "gatsby";
+import { darken } from "polished";
 
 const AboveFold = styled.div`
   ${Mixins.aboveFoldMixin}
@@ -142,23 +142,36 @@ class Homepage extends React.Component {
     const { data } = this.props;
     return (
       <HomepageWrapper>
-        <Layout theme="white" bigFooter openContactPopup={this.openContactPopup}>
+        <Layout
+          theme="white"
+          bigFooter
+          openContactPopup={this.openContactPopup}
+        >
           <AboveFold>
-            <Img fluid={data.avatarHomepage.childImageSharp.fluid} alt="Ross Thorne" className="avatar" />
+            <Img
+              fluid={data.avatarHomepage.childImageSharp.fluid}
+              alt="Ross Thorne"
+              className="avatar"
+            />
             <t.H1 primary align="center">
               Ross Thorne
             </t.H1>
             <t.LargeP align="center" max45>
-              Research Software Engineer with a background in bioinformatics, web development, and cancer biology. I
-              work with developers and scientists to produce reliable and robust software for life sciences. Check out
-              my work on <a href="https://github.com/rmwthorne">Github</a>.
+              Research Software Engineer with a background in bioinformatics,
+              web development, and cancer biology. I work with developers and
+              scientists to produce reliable and robust software for life
+              sciences. Check out my work on{" "}
+              <a href="https://github.com/rmwthorne">Github</a>.
             </t.LargeP>
             <HireMe large onClick={this.openContactPopup} book>
               Contact me
             </HireMe>
           </AboveFold>
         </Layout>
-        <HireMePopup open={openHireMePopup} handleClose={this.handleRequestDemoClose} />
+        <HireMePopup
+          open={openHireMePopup}
+          handleClose={this.handleRequestDemoClose}
+        />
       </HomepageWrapper>
     );
   }
